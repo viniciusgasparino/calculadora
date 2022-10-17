@@ -1,16 +1,2 @@
-.h2{
-  text-align: center;
-  margin-top: 40px;
-}
 
-.center{
-  max-width: 700px;
-  width: 100%;
-  margin: 10px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  border: 1px solid;
-  padding: 25px;
-}
 
