@@ -1,10 +1,11 @@
 import Button from "../butom/Button"
+import styles from "./Calculadora.module.css"
 
 
 function Calculadora(){
   return(
     <>
-      calculadora
+    <div className={styles.content}>
       <Button text="1" corBotao="green"/>
       <Button text="2" />
       <Button text="3" />
@@ -23,6 +24,7 @@ function Calculadora(){
       <Button text="%" />
       <Button text="." />
       <Button text="<-"/>
+    </div>
     </>
   )
 }

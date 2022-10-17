@@ -11,7 +11,8 @@ function Button({text,onClick,corBotao}){
       cursor: "pointer",
       height: "40px",
       margin: "10px",
-      color: "blue"
+      color: "blue",
+      borderRadius: "20px"
     }}>
       {text}
     </button>
