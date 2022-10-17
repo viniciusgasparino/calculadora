@@ -1,11 +1,13 @@
-import Button from "../butom/Button"
 import styles from "./Calculadora.module.css"
+import Button from "../butom/Button"
+import Tela from "../tela/Tela"
+
 
 
 function Calculadora(){
   return(
     <div className={styles.container}>
-      <div className={styles.tela}><h2></h2></div>
+      <Tela/>
       <div className={styles.content}>
         <Button text="1" corBotao="green"/>
         <Button text="2" />
