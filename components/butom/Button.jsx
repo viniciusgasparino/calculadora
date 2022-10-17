@@ -2,10 +2,10 @@
 
 
 
-function Button({text,onClick}){
+function Button({text,onClick,corBotao}){
   return(
     <button onClick={onClick} style={{
-      backgroundColor: "lightblue",
+      backgroundColor: `${corBotao}`,
       border: "none",
       width: "40px",
       cursor: "pointer",
@@ -18,6 +18,8 @@ function Button({text,onClick}){
   )
 }
 
-
+Button.defaultProps = {
+  corBotao: "lightblue"
+}
 
 export default Button
