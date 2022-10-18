@@ -7,6 +7,7 @@ import {useState} from "react"
 
 function Calculadora(){
   const [number,setNumber] = useState(0)
+  const [operator,setOperator] = useState()
 
   const inputNumber = (e) => {
     if(number==0){
@@ -19,6 +20,16 @@ function Calculadora(){
   const clearNumber = () => {
     setNumber(0)
   }
+
+  const mudarSinal = (e) => {
+    console.log(e.target.value)
+    setOperator(e.target.value)
+  }
+
+
+
+
+  
 
 
   return(
@@ -36,12 +47,13 @@ function Calculadora(){
         <Button text="9" value={9} onClick={inputNumber} />
         <Button text="0" value={0} onClick={inputNumber} />
         <Button text="AC"value={"ac"} onClick={clearNumber} />
-        <Button text="+" value={"+"} />
-        <Button text="-" value={"-"} />
-        <Button text="*" value={"*"} />
-        <Button text="/" value={"/"} />
-        <Button text="%" value={"%"} />
-        <Button text="." value={"."} />
+        <Button text="+" value={"+"}  onClick={mudarSinal} />
+        <Button text="-" value={"-"}  onClick={mudarSinal} />
+        <Button text="*" value={"*"}  onClick={mudarSinal} />
+        <Button text="/" value={"/"}  onClick={mudarSinal} />
+        <Button text="%" value={"%"}  onClick={mudarSinal} />
+        <Button text="=" value={"="} />
+        <Button text="." value={"."} onClick={inputNumber} />
         <Button text="<-"value={"<-"} />
       </div>
     </div>
