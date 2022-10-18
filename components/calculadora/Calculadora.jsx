@@ -16,6 +16,10 @@ function Calculadora(){
     }
   }
 
+  const clearNumber = () => {
+    setNumber(0)
+  }
+
 
   return(
     <div className={styles.container}>
@@ -31,7 +35,7 @@ function Calculadora(){
         <Button text="8" value={8} onClick={inputNumber} />
         <Button text="9" value={9} onClick={inputNumber} />
         <Button text="0" value={0} onClick={inputNumber} />
-        <Button text="AC"value={"ac"} />
+        <Button text="AC"value={"ac"} onClick={clearNumber} />
         <Button text="+" value={"+"} />
         <Button text="-" value={"-"} />
         <Button text="*" value={"*"} />
