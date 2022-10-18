@@ -1,10 +1,8 @@
 .container{
   display: flex;
   flex-direction: column;
-  background-color: aqua;
   margin: 40px auto;
   width: 100%;
-  border: 1px solid;
   align-items: center;
   padding: 50px;
 }
@@ -13,9 +11,10 @@
   width: 230px;
   display: grid;
   grid-template-columns: repeat(4, 0fr);
-  background-color: cadetblue;
+  background-color: #868585;
   gap: 10px;
-  padding-left: 20px;
+  padding-left: 15px;
   padding-top: 20px;
   padding-bottom: 20px;
+  border: 5px solid white;
 }

@@ -27,7 +27,7 @@ function Calculadora(){
   const handlerOperator = (e) => {
     setOperator(e.target.value)
     setOldNumber(number)
-    setNumber(0)
+    setNumber("")
   }
 
 
@@ -50,7 +50,7 @@ function Calculadora(){
           setOperator("")
         break  
       case "%":
-          setNumber((parseInt(oldNumber)/100) * parseInt(number))
+          setNumber((parseInt(oldNumber)/100) * parseInt(number).toFixed(1))
           setOperator("")
         break;  
     }
@@ -60,18 +60,17 @@ function Calculadora(){
     let valor = e.target.value
     String(valor)
     valor = valor.substring(0,(valor.length-1))   
+    console.log(valor)
     if(valor>0){
       setNumber(parseInt(valor)) 
     }
   }
 
-
-
   return(
     <div className={styles.container}>
       <Tela><H2>{number}</H2></Tela>
       <div className={styles.content}>
-        <Button text="1" value={1} onClick={inputNumber} corBotao="green"/>
+        <Button text="1" value={1} onClick={inputNumber} />
         <Button text="2" value={2} onClick={inputNumber} />
         <Button text="3" value={3} onClick={inputNumber} />
         <Button text="4" value={4} onClick={inputNumber} />
@@ -81,15 +80,15 @@ function Calculadora(){
         <Button text="8" value={8} onClick={inputNumber} />
         <Button text="9" value={9} onClick={inputNumber} />
         <Button text="0" value={0} onClick={inputNumber} />
-        <Button text="AC"value={"ac"} onClick={clearNumber} />
-        <Button text="+" value={"+"} onClick={handlerOperator} />
-        <Button text="-" value={"-"} onClick={handlerOperator} />
-        <Button text="*" value={"*"} onClick={handlerOperator} />
-        <Button text="/" value={"/"} onClick={handlerOperator} />
-        <Button text="%" value={"%"} onClick={handlerOperator} />
-        <Button text="=" value={"="} onClick={calculator} />
-        <Button text="." value={"."}  onClick={inputNumber}/>
-        <Button text="<-" value={number} onClick={backSpace} />
+        <Button text="AC"value={"ac"} onClick={clearNumber} corBotao="#76ff03"/>
+        <Button text="+" value={"+"} onClick={handlerOperator} corBotao="#1de9b6"/>
+        <Button text="-" value={"-"} onClick={handlerOperator} corBotao="#1de9b6"/>
+        <Button text="*" value={"*"} onClick={handlerOperator} corBotao="#1de9b6"/>
+        <Button text="/" value={"/"} onClick={handlerOperator} corBotao="#1de9b6"/>
+        <Button text="%" value={"%"} onClick={handlerOperator} corBotao="#1de9b6"/>
+        <Button text="=" value={"="} onClick={calculator} corBotao="#ee9d33"/>
+        <Button text="." value={"."}  onClick={inputNumber} corBotao="#e0e0e0"/>
+        <Button text="<-" value={number} onClick={backSpace} corBotao="#e0e0e0"/>
       </div>
     </div>
   )
