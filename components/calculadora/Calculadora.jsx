@@ -1,13 +1,14 @@
 import styles from "./Calculadora.module.css"
 import Button from "../butom/Button"
 import Tela from "../tela/Tela"
+import H2 from "../h2/H2"
 
 
 
 function Calculadora(){
   return(
     <div className={styles.container}>
-      <Tela/>
+      <Tela><H2></H2></Tela>
       <div className={styles.content}>
         <Button text="1" corBotao="green"/>
         <Button text="2" />

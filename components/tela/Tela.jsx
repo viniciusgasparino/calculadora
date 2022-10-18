@@ -1,9 +1,10 @@
 import styles from "./Tela.module.css"
 
-function Tela(){
+
+function Tela(props){
   return(
     <div className={styles.tela}>
-      <h2>000</h2>
+      {props.children}
     </div>
   )
 }
