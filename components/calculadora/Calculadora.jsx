@@ -30,6 +30,7 @@ function Calculadora(){
     setNumber(0)
   }
 
+
   const calculator = () => {
     switch (operator) {
       case "+":
@@ -52,6 +53,15 @@ function Calculadora(){
           setNumber((parseInt(oldNumber)/100) * parseInt(number))
           setOperator("")
         break;  
+    }
+  }
+
+  const backSpace = (e) => {
+    let valor = e.target.value
+    String(valor)
+    valor = valor.substring(0,(valor.length-1))   
+    if(valor>0){
+      setNumber(parseInt(valor)) 
     }
   }
 
@@ -79,7 +89,7 @@ function Calculadora(){
         <Button text="%" value={"%"} onClick={handlerOperator} />
         <Button text="=" value={"="} onClick={calculator} />
         <Button text="." value={"."}  onClick={inputNumber}/>
-        <Button text="<-"value={"<-"} />
+        <Button text="<-" value={number} onClick={backSpace} />
       </div>
     </div>
   )
