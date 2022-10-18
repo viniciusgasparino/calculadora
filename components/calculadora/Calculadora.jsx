@@ -8,6 +8,7 @@ import {useState} from "react"
 function Calculadora(){
   const [number,setNumber] = useState(0)
   const [operator,setOperator] = useState()
+  const [oldNumber,setOldNumber] = useState()
 
   const inputNumber = (e) => {
     if(number==0){
@@ -17,19 +18,43 @@ function Calculadora(){
     }
   }
 
+
   const clearNumber = () => {
     setNumber(0)
   }
 
-  const mudarSinal = (e) => {
-    console.log(e.target.value)
+
+  const handlerOperator = (e) => {
     setOperator(e.target.value)
+    setOldNumber(number)
+    setNumber(0)
   }
 
+  const calculator = () => {
+    switch (operator) {
+      case "+":
+          setNumber(parseInt(oldNumber) + parseInt(number))
+          setOperator("")
+        break
+      case "-":
+          setNumber(parseInt(oldNumber) - parseInt(number))
+          setOperator("")
+        break
+      case "*":
+          setNumber(parseInt(oldNumber) * parseInt(number))
+          setOperator("")
+        break  
+      case "/":
+          setNumber(parseInt(oldNumber) / parseInt(number))
+          setOperator("")
+        break  
+      case "%":
+          setNumber((parseInt(oldNumber)/100) * parseInt(number))
+          setOperator("")
+        break;  
+    }
+  }
 
-
-
-  
 
 
   return(
@@ -47,13 +72,13 @@ function Calculadora(){
         <Button text="9" value={9} onClick={inputNumber} />
         <Button text="0" value={0} onClick={inputNumber} />
         <Button text="AC"value={"ac"} onClick={clearNumber} />
-        <Button text="+" value={"+"}  onClick={mudarSinal} />
-        <Button text="-" value={"-"}  onClick={mudarSinal} />
-        <Button text="*" value={"*"}  onClick={mudarSinal} />
-        <Button text="/" value={"/"}  onClick={mudarSinal} />
-        <Button text="%" value={"%"}  onClick={mudarSinal} />
-        <Button text="=" value={"="} />
-        <Button text="." value={"."} onClick={inputNumber} />
+        <Button text="+" value={"+"} onClick={handlerOperator} />
+        <Button text="-" value={"-"} onClick={handlerOperator} />
+        <Button text="*" value={"*"} onClick={handlerOperator} />
+        <Button text="/" value={"/"} onClick={handlerOperator} />
+        <Button text="%" value={"%"} onClick={handlerOperator} />
+        <Button text="=" value={"="} onClick={calculator} />
+        <Button text="." value={"."}  onClick={inputNumber}/>
         <Button text="<-"value={"<-"} />
       </div>
     </div>
