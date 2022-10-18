@@ -1,8 +1,8 @@
 
 
-function Button({text,onClick,corBotao}){
+function Button({text,value,onClick,corBotao}){
   return(
-    <button onClick={onClick} style={{
+    <button value={value} onClick={onClick} style={{
       backgroundColor: `${corBotao}`,
       border: "none",
       width: "40px",
