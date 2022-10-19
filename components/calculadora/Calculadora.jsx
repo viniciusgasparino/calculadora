@@ -10,6 +10,7 @@ function Calculadora(){
   const [operator,setOperator] = useState()
   const [oldNumber,setOldNumber] = useState()
         
+
   const inputNumber = (e) => {
     if(number==0){
       setNumber(e.target.value)
@@ -52,7 +53,7 @@ function Calculadora(){
       case "%":
           setNumber((parseInt(oldNumber)/100) * parseInt(number).toFixed(1))
           setOperator("")
-        break;  
+        break  
     }
   }
 
@@ -60,7 +61,6 @@ function Calculadora(){
     let valor = e.target.value
     String(valor)
     valor = valor.substring(0,(valor.length-1))   
-    console.log(valor)
     if(valor>0){
       setNumber(parseInt(valor)) 
     }
@@ -87,7 +87,7 @@ function Calculadora(){
         <Button text="/" value={"/"} onClick={handlerOperator} corBotao="#1de9b6"/>
         <Button text="%" value={"%"} onClick={handlerOperator} corBotao="#1de9b6"/>
         <Button text="=" value={"="} onClick={calculator} corBotao="#ee9d33"/>
-        <Button text="." value={"."}  onClick={inputNumber} />
+        <Button text="." value={"."} onClick={inputNumber} />
         <Button text="<-" value={number} onClick={backSpace} />
       </div>
     </div>

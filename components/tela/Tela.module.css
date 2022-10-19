@@ -5,3 +5,10 @@
   border: 5px solid white;
   background-color: #c2b4f7;
 }
+
+
+@media screen and (max-width: 600px){
+  .tela{
+    width:  250px;;
+  }
+}

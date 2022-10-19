@@ -1,6 +1,6 @@
 
 
-function Button({text,value,onClick,corBotao}){
+function Button({text,value,onClick,corBotao}){   
   return(
     <button value={value} onClick={onClick} style={{
       backgroundColor: `${corBotao}`,
