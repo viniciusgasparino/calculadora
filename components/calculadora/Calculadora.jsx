@@ -4,7 +4,7 @@ import Tela from "../tela/Tela"
 import H2 from "../h2/H2"
 import {useState} from "react"
 
-    
+
 function Calculadora(){
   const [number,setNumber] = useState(0)
   const [operator,setOperator] = useState()
@@ -87,8 +87,8 @@ function Calculadora(){
         <Button text="/" value={"/"} onClick={handlerOperator} corBotao="#1de9b6"/>
         <Button text="%" value={"%"} onClick={handlerOperator} corBotao="#1de9b6"/>
         <Button text="=" value={"="} onClick={calculator} corBotao="#ee9d33"/>
-        <Button text="." value={"."}  onClick={inputNumber} corBotao="#e0e0e0"/>
-        <Button text="<-" value={number} onClick={backSpace} corBotao="#e0e0e0"/>
+        <Button text="." value={"."}  onClick={inputNumber} />
+        <Button text="<-" value={number} onClick={backSpace} />
       </div>
     </div>
   )

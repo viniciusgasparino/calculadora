@@ -18,7 +18,7 @@ function Button({text,value,onClick,corBotao}){
 }
 
 Button.defaultProps = {
-  corBotao: "lightblue"
+  corBotao: "white"
 }
 
 export default Button
