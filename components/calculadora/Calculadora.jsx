@@ -4,12 +4,12 @@ import Tela from "../tela/Tela"
 import H2 from "../h2/H2"
 import {useState} from "react"
 
-
+    
 function Calculadora(){
   const [number,setNumber] = useState(0)
   const [operator,setOperator] = useState()
   const [oldNumber,setOldNumber] = useState()
-
+        
   const inputNumber = (e) => {
     if(number==0){
       setNumber(e.target.value)

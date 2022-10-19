@@ -8,7 +8,7 @@ function Button({text,value,onClick,corBotao}){
       width: "40px",
       cursor: "pointer",
       height: "40px",
-      color: "#3a3939",
+      color: "#050211",
       fontWeight: "bold",
       borderRadius: "10px"
     }}>
